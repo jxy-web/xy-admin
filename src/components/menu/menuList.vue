@@ -1,14 +1,14 @@
 <template>
     <div>
         <template v-for="(item) in menuList">
-            <el-submenu v-if="item.alwaysShow" :index="item.name">
+            <el-submenu v-if="item.alwaysShow" :index="item.name" :key="item.name">
                 <template slot="title">
                     <i :class="item.meta.icon" class="xy-menu-icon" :style="{marginRight:hierarchy * 10 + 'px'}"></i>
                     <span>{{geti8ln(item.name)}}</span>
                 </template>
                 <menu-sun :menuList="item.children" :hierarchy="hierarchy + 1"/>
             </el-submenu>
-            <el-menu-item v-else :index="item.name" :route="item.path">
+            <el-menu-item v-else :index="item.name" :route="item.path" :key="item.name">
                 <i :class="resolveIcon(item)" class="xy-menu-icon" :style="{marginRight: hierarchy * 10 + 'px'}"></i>
                 <span slot="title">{{resolveName(item)}}</span>
             </el-menu-item>

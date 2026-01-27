@@ -62,6 +62,7 @@
                     images_upload_handler: (blobInfo, success, failure) => {
                         const img = 'data:image/jpeg;base64,' + blobInfo.base64()
                         success(img)
+                        if (false) failure('fail')
                     }
                 },
                 myValue: this.value
