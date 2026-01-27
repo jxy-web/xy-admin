@@ -10,18 +10,18 @@
             <el-menu :collapse="isCollapse"
                  router
                  :default-active="$route.name"
-                 text-color="#979797"
-                 active-text-color="#fff"
-                 background-color="#001529">
+                 text-color="#71717a"
+                 active-text-color="#09090b"
+                 background-color="#ffffff">
                     <MenuSun :menuList="menuList" :hierarchy="0"/>
             </el-menu>
 
             </el-aside>
             <el-container>
-                <el-header style="border-bottom: 1px solid #dcdfe6">
+                <el-header style="border-bottom: 1px solid var(--border); background-color: var(--background)">
                     <el-row :gutter="10">
                         <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
-                            <div class="grid-content bg-purple">
+                            <div class="grid-content">
                                 <i class="iconfont icon-guanbi" @click="handleToggle"></i>
                             </div>
                         </el-col>
@@ -53,7 +53,7 @@
                         </el-col>
                     </el-row>
                 </el-header>
-                <el-main style="backgroundColor:#F5F5F5" class="scrwrap">
+                <el-main style="backgroundColor:var(--muted)" class="scrwrap">
                     <router-view />
                     <el-backtop target=".scrwrap" :bottom="70"></el-backtop>
                 </el-main>
@@ -151,22 +151,27 @@ export default {
 
 <style lang="scss" scoped>
 .el-aside{
-    background-color: #001529
+    background-color: var(--background);
+    border-right: 1px solid var(--border);
 }
 .xy-aside{
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    transition: all 0.6s ease;
+    transition: all 0.4s ease;
 }
 .logo-box{
-    color: white;
-    font-weight: 600;
+    color: var(--foreground);
     height: 60px;
-    font-size: 18px;
-    text-align: center;
     display: flex;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 16px;
+    border-bottom: 1px solid var(--border);
+    h1 {
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin: 0;
+        white-space: nowrap;
+    }
 }
 .grid-content{
     line-height: 60px;
@@ -179,14 +184,15 @@ export default {
     height: 60px;
 }
 .pic{
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    object-fit: cover;
 }
 .logo-pic{
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
 }
     .isCollapse{
         width: 64px;

@@ -1,6 +1,6 @@
 <template>
-    <div style="height:3000px">
-        <el-row :gutter="10">
+    <div>
+        <el-row :gutter="20">
             <el-col :xs="24" :sm="8" :md="6" :lg="6" :xl="4">
                 <card :title="$t('card.visit')" :count="500" icon="iconfont icon-fangwentongji" color="#73DDFF"/>
             </el-col>
@@ -21,36 +21,36 @@
             </el-col>
         </el-row>
         <el-row :gutter="10">
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6"><div class="home-col">
-                <el-card class="box-card" shadow="hover">
+            <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6"><div class="home-col">
+                <el-card class="box-card" shadow="never">
                     <div slot="header" class="clearfix">
                         <span class="card-title">{{$t('card.wordCloud')}}</span>
                     </div>
-                    <div id="wordCloudEcharts" style="width:100%;height: 260px"></div>
+                    <div id="wordCloudEcharts" style="width:100%;height: 300px"></div>
                 </el-card>
             </div></el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6"><div class="home-col">
-                <el-card class="box-card" shadow="hover">
+            <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6"><div class="home-col">
+                <el-card class="box-card" shadow="never">
                     <div slot="header" class="clearfix">
                         <span class="card-title">{{$t('card.funnel')}}</span>
                     </div>
-                    <div id="funnelEcharts" style="width:100%;height: 260px"></div>
+                    <div id="funnelEcharts" style="width:100%;height: 300px"></div>
                 </el-card>
             </div></el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6"><div class="home-col">
-                <el-card class="box-card" shadow="hover">
+            <el-col :xs="24" :sm="12" :md="12" :lg="12" :xl="6"><div class="home-col">
+                <el-card class="box-card" shadow="never">
                     <div slot="header" class="clearfix">
                         <span class="card-title">{{$t('card.pie')}}</span>
                     </div>
-                    <div id="pieEcharts" style="width:100%;height: 260px"></div>
+                    <div id="pieEcharts" style="width:100%;height: 300px"></div>
                 </el-card>
             </div></el-col>
-            <el-col :xs="24" :sm="12" :md="8" :lg="8" :xl="6"><div class="home-col">
-                <el-card class="box-card" shadow="hover">
+            <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="6"><div class="home-col">
+                <el-card class="box-card" shadow="never">
                     <div slot="header" class="clearfix">
                         <span class="card-title">{{$t('card.line')}}</span>
                     </div>
-                    <div id="cateEcharts" style="width:100%;height: 260px"></div>
+                    <div id="cateEcharts" style="width:100%;height: 300px"></div>
                 </el-card>
             </div></el-col>
         </el-row>
@@ -377,7 +377,10 @@ export default {
     }
     .card-title{
         font-weight: 600;
-        font-size: 16px;
-        line-height: 60px;
+        font-size: 1rem;
+    }
+    .el-card /deep/ .el-card__header {
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--border);
     }
 </style>

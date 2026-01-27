@@ -1,12 +1,41 @@
-html,body,div,span,applet,object,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
-                                      margin:0;
-                                      padding:0;
-                                      border:0;
-                                      font-size:100%;
-                                      font:inherit;
-                                      font-weight:normal;
-                                      vertical-align:baseline;
-                                  }
+:root {
+  --background: #ffffff;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: #f4f4f5;
+  --accent-foreground: #18181b;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
+  --ring: #a1a1aa;
+  --radius: 0.5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background);
+    color: var(--foreground);
+}
 /* HTML5 display-role reset for older browsers */
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
     display:block;
@@ -31,7 +60,7 @@ th,td {
 /* custom */
 a {
     outline:none;
-    color:#16418a;
+    color: inherit;
     text-decoration:none;
     -webkit-backface-visibility:hidden;
 }
@@ -49,9 +78,9 @@ input:focus,select:focus,textarea:focus {
 }
 /* main布局样式 */
 .xy-container{
-    background-color: white;
+    background-color: var(--background);
     height: 100%;
-    padding: 10px;
+    padding: 24px;
     overflow: auto;
     box-sizing: border-box;
 }
@@ -97,4 +126,54 @@ input:-webkit-autofill,
     input:-webkit-autofill:active {
         -webkit-transition-delay: 99999s;
         -webkit-transition: color 99999s ease-out, background-color 99999s ease-out;
+}
+
+/* Element UI Overrides */
+.el-button {
+    border-radius: var(--radius) !important;
+    font-weight: 500 !important;
+}
+
+.el-button--primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+}
+
+.el-input__inner {
+    border-radius: var(--radius) !important;
+    border-color: var(--border) !important;
+}
+
+.el-input__inner:focus {
+    border-color: var(--ring) !important;
+}
+
+.el-card {
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--border) !important;
+    box-shadow: none !important;
+}
+
+.el-table {
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius) !important;
+}
+
+.el-menu {
+    border-right: none !important;
+}
+
+.el-dialog {
+    border-radius: var(--radius) !important;
+}
+
+.el-menu-item.is-active {
+    background-color: var(--accent) !important;
+    color: var(--primary) !important;
+    font-weight: 600;
+}
+
+.el-menu-item:hover {
+    background-color: var(--accent) !important;
 }

@@ -1,5 +1,6 @@
-
 let path = require('path')
+const CompressionPlugin = require('compression-webpack-plugin')
+
 function resolve (dir) {
     return path.join(__dirname, dir)
 }
@@ -8,6 +9,9 @@ module.exports={
     chainWebpack: (config) => {
         config.externals({
             'vue': 'Vue',
+            'vue-router': 'VueRouter',
+            'vuex': 'Vuex',
+            'axios': 'axios',
         })
         config.resolve.alias.set('@', resolve('src'))
     },
@@ -33,5 +37,12 @@ module.exports={
         resolve: {
             symlinks: true,
         },
+        plugins: [
+            new CompressionPlugin({
+                test: /\.js$|\.html$|\.css/,
+                threshold: 10240,
+                deleteOriginalAssets: false
+            })
+        ]
     }
 }
